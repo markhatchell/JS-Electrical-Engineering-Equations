@@ -35,10 +35,6 @@ class Wavelength {
     return this.valueInMeters.toPrecision(this.precision);
   }
 
-  toStringWithPrecision(p) {
-    return this.valueInMeters.toPrecision(p);
-  }
-
   setPrecision(p) {
     this.precision = p;
   }
@@ -51,44 +47,60 @@ class Wavelength {
     return metersToInches(this.valueInMeters);
   }
 
-  toFeetWithPrecision(p) {
-    return metersToFeet(this.valueInMeters, p);
+  toThreeQuartersWavelength(unit = 'm') {
+    if (typeof unit === 'undefined') {
+      unit = 'm';
+    }
+    switch(unit) {
+      case 'm':
+        return (this.valueInMeters * .75).toPrecision(this.precision);
+      case 'f':
+        return (metersToFeet(this.valueInMeters * .75)).toPrecision(this.precision);
+      case 'in':
+        return (metersToInches(this.valueInMeters * .75)).toPrecision(this.precision);
+    }
   }
 
-  toInchesWithPrecision(p) {
-    return metersToInches(this.valueInMeters, p);
+  toFiveEighthsWavelength(unit = 'm') {
+    if (typeof unit === 'undefined') {
+      unit = 'm';
+    }
+    switch(unit) {
+      case 'm':
+        return (this.valueInMeters * .625).toPrecision(this.precision);
+      case 'f':
+        return (metersToFeet(this.valueInMeters * .625)).toPrecision(this.precision);
+      case 'in':
+        return (metersToInches(this.valueInMeters * .625)).toPrecision(this.precision);
+    }
   }
 
-  toThreeQuartersWavelength() {
-    return (this.valueInMeters * .75).toPrecision(this.precision);
+  toHalfWavelength(unit = 'm') {
+    if (typeof unit === 'undefined') {
+      unit = 'm';
+    }
+    switch(unit) {
+      case 'm':
+        return (this.valueInMeters * .5).toPrecision(this.precision);
+      case 'f':
+        return (metersToFeet(this.valueInMeters * .5)).toPrecision(this.precision);
+      case 'in':
+        return (metersToInches(this.valueInMeters * .5)).toPrecision(this.precision);
+    }
   }
 
-  toFiveEighthsWavelength() {
-    return (this.valueInMeters * .625).toPrecision(this.precision);
-  }
-
-  toHalfWavelength() {
-    return (this.valueInMeters * .5).toPrecision(this.precision);
-  }
-
-  toQuarterWavelength() {
-    return (this.valueInMeters * .25).toPrecision(this.precision);
-  }
-
-  toThreeQuartersWavelengthWithPrecision(p) {
-    return (this.valueInMeters * .75).toPrecision(p);
-  }
-
-  toFiveEighthsWavelengthWithPrecision(p) {
-    return (this.valueInMeters * .625).toPrecision(p);
-  }
-
-  toHalfWavelengthWithPrecision(p) {
-    return (this.valueInMeters * .5).toPrecision(p);
-  }
-
-  toQuarterWavelengthWithPrecision(p) {
-    return (this.valueInMeters * .25).toPrecision(p);
+  toQuarterWavelength(unit = 'm') {
+    if (typeof unit === 'undefined') {
+      unit = 'm';
+    }
+    switch(unit) {
+      case 'm':
+        return (this.valueInMeters * .25).toPrecision(this.precision);
+      case 'f':
+        return (metersToFeet(this.valueInMeters * .25)).toPrecision(this.precision);
+      case 'in':
+        return (metersToInches(this.valueInMeters * .25)).toPrecision(this.precision);
+    }
   }
 
 }
