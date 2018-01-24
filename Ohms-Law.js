@@ -54,7 +54,7 @@ function calcCurrentResistance(watts, voltage) {
 }
 
 
-const OmhsLaw = {
+const OhmsLaw = {
   calcWattsResistance: calcWattsResistance,
   calcWattsCurrent: calcWattsCurrent,
   calcWattsVoltage: calcWattsVoltage,
@@ -63,4 +63,4 @@ const OmhsLaw = {
   calcCurrentResistance: calcCurrentResistance
 };
 
-export default OmhsLaw;
+export default OhmsLaw;
