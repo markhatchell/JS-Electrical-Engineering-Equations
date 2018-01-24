@@ -60,3 +60,6 @@ class Wavelength {
   }
 
 }
+
+
+export default Wavelength;
