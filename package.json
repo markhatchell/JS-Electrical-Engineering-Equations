@@ -1,0 +1,23 @@
+{
+  "name": "js-electrical-engineering-equations",
+  "version": "1.0.0",
+  "description": "This is an ES6/ES2015 library of Electrical Engineering Equations",
+  "main": "Omhs-law.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markhatchell/JS-Electrical-Engineering-Equations.git"
+  },
+  "keywords": [
+    "Electrical",
+    "Engineering"
+  ],
+  "author": "Mark Hatchell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markhatchell/JS-Electrical-Engineering-Equations/issues"
+  },
+  "homepage": "https://github.com/markhatchell/JS-Electrical-Engineering-Equations#readme"
+}
