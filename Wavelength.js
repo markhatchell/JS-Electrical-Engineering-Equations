@@ -59,6 +59,38 @@ class Wavelength {
     return metersToInches(this.valueInMeters, p);
   }
 
+  toThreeQuartersWavelength() {
+    return (this.valueInMeters * .75).toPrecision(this.precision);
+  }
+
+  toFiveEighthsWavelength() {
+    return (this.valueInMeters * .625).toPrecision(this.precision);
+  }
+
+  toHalfWavelength() {
+    return (this.valueInMeters * .5).toPrecision(this.precision);
+  }
+
+  toQuarterWavelength() {
+    return (this.valueInMeters * .25).toPrecision(this.precision);
+  }
+
+  toThreeQuartersWavelengthWithPrecision(p) {
+    return (this.valueInMeters * .75).toPrecision(p);
+  }
+
+  toFiveEighthsWavelengthWithPrecision(p) {
+    return (this.valueInMeters * .625).toPrecision(p);
+  }
+
+  toHalfWavelengthWithPrecision(p) {
+    return (this.valueInMeters * .5).toPrecision(p);
+  }
+
+  toQuarterWavelengthWithPrecision(p) {
+    return (this.valueInMeters * .25).toPrecision(p);
+  }
+
 }
 
 
