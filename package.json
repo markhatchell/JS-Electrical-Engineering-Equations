@@ -4,9 +4,12 @@
   "description": "This is an ES6/ES2015 library of Electrical Engineering Equations",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "build": "babel src --out-dir lib --source-maps",
     "prepublish": "npm run build"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-es2015-block-scoping": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "jest-cli": "^22.1.4"
   }
 }

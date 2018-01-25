@@ -25,7 +25,7 @@ function metersToInches(meters, precision = 4) {
 class Wavelength {
   constructor(frequencyInMegahertz, precision = 4) {
     if (typeof frequencyInMegahertz === 'undefined') {
-      throw Error('Need a frequency to init a Wavelength');
+      throw new Error('Need a frequency to init a Wavelength');
     }
     this.frequencyInMegahertz = parseFloat(frequencyInMegahertz);
     this.valueInMeters = 300 / this.frequencyInMegahertz;
@@ -34,6 +34,10 @@ class Wavelength {
 
   toString() {
     return this.valueInMeters.toPrecision(this.precision);
+  }
+
+  toFloat() {
+    return parseFloat(this.valueInMeters.toPrecision(this.precision));
   }
 
   setPrecision(p) {
@@ -108,7 +112,7 @@ class Wavelength {
         return metersToInches(quaterWavelength, this.precision);
     }
   }
-  
+
 }
 
 
