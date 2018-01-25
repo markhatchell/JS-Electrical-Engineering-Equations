@@ -1,0 +1,7 @@
+{
+  "sourceRoot": "src",
+  "sourceType": "module",
+  "presets": [
+    "env"
+  ]
+}
