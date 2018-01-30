@@ -4,3 +4,12 @@
 
 
 This is an ES6/ES2015 library of Electrical Engineering Equations
+
+# Installation
+
+`npm install js-electrical-engineering-equations`
+
+
+# Useage
+
+Useage instructions will be coming soon.
