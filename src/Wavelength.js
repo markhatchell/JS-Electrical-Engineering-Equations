@@ -1,26 +1,9 @@
 'use strict';
 
 
-function metersToCentimeters(meters, precision = 4) {
-  if (typeof precision === 'undefined') {
-    precision = 4;
-  }
-  return (meters * 100).toPrecision(precision);
-}
 
-function metersToFeet(meters, precision = 4) {
-  if (typeof precision === 'undefined') {
-    precision = 4;
-  }
-  return (meters * 3.2808399).toPrecision(precision);
-}
 
-function metersToInches(meters, precision = 4) {
-  if (typeof precision === 'undefined') {
-    precision = 4;
-  }
-  return ((meters * 3.2808399) * 12).toPrecision(precision);
-}
+import { getFloat, metersToCentimeters, metersToFeet, metersToInches } from "./utils";
 
 class Wavelength {
   constructor(frequencyInMegahertz, precision = 4) {
@@ -33,11 +16,11 @@ class Wavelength {
   }
 
   toString() {
-    return this.valueInMeters.toPrecision(this.precision);
+    return getFloat(this.valueInMeters, this.precision).toString();
   }
 
   toFloat() {
-    return parseFloat(this.valueInMeters.toPrecision(this.precision));
+    return getFloat(this.valueInMeters, this.precision);
   }
 
   setPrecision(p) {
@@ -63,7 +46,7 @@ class Wavelength {
       case 'cm':
         return metersToCentimeters(threeQuartersWavelength, this.precision);
       case 'm':
-        return (threeQuartersWavelength).toPrecision(this.precision);
+        return getFloat(threeQuartersWavelength, this.precision);
       case 'f':
         return metersToFeet(threeQuartersWavelength, this.precision);
       case 'in':
@@ -77,7 +60,7 @@ class Wavelength {
       case 'cm':
         return metersToCentimeters(fiveEighthsWavelength, this.precision);
       case 'm':
-        return (fiveEighthsWavelength).toPrecision(this.precision);
+        return getFloat(fiveEighthsWavelength, this.precision);
       case 'f':
         return metersToFeet(fiveEighthsWavelength, this.precision);
       case 'in':
@@ -91,7 +74,7 @@ class Wavelength {
       case 'cm':
         return metersToCentimeters(halfWavelength, this.precision);
       case 'm':
-        return (halfWavelength).toPrecision(this.precision);
+        return getFloat(halfWavelength, this.precision);
       case 'f':
         return metersToFeet(halfWavelength, this.precision);
       case 'in':
@@ -100,16 +83,16 @@ class Wavelength {
   }
 
   toQuarterWavelength(unit = 'm') {
-    const quaterWavelength = this.valueInMeters * .25;
+    const quarterWavelength = this.valueInMeters * .25;
     switch(unit) {
       case 'cm':
-        return metersToCentimeters(quaterWavelength, this.precision);
+        return metersToCentimeters(quarterWavelength, this.precision);
       case 'm':
-        return (quaterWavelength).toPrecision(this.precision);
+        return getFloat(quarterWavelength, this.precision);
       case 'f':
-        return metersToFeet(quaterWavelength, this.precision);
+        return metersToFeet(quarterWavelength, this.precision);
       case 'in':
-        return metersToInches(quaterWavelength, this.precision);
+        return metersToInches(quarterWavelength, this.precision);
     }
   }
 
