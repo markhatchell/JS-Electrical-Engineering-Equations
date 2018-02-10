@@ -1,4 +1,4 @@
-import { getFloat, metersToCentimeters, metersToFeet, metersToInches } from "./utils";
+import { getFloat, meterConversion, metersToCentimeters, metersToFeet, metersToInches } from "./utils";
 
 describe('utils', () => {
 
@@ -24,6 +24,14 @@ describe('utils', () => {
   test('metersToInches should work', () => {
     expect(metersToInches(1)).toBe(39.3701);
     expect(metersToInches(2, 4)).toBe(78.7402);
+  });
+
+
+  test('metersConversion should work', () => {
+    expect(meterConversion('m', 1, 2)).toBe(1);
+    expect(meterConversion('f', 1, 2)).toBe(3.28);
+    expect(meterConversion('in', 1, 2)).toBe(39.37);
+    expect(meterConversion('cm', 1, 2)).toBe(100);
   });
 
 
