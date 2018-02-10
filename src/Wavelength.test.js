@@ -12,7 +12,7 @@ describe('Wavelength', () => {
 
 
   test('should initialize with a wavelength and output as string', () => {
-    expect(wavelength.toString()).toEqual("1.000");
+    expect(wavelength.toString()).toEqual("1");
   });
 
   test('should initialize with a wavelength and output as float', () => {
@@ -27,127 +27,129 @@ describe('Wavelength', () => {
 
   // meters tests
   test('should show full wavelength in meters as 1.000', () => {
-    expect(wavelength.toString()).toEqual("1.000");
+    expect(wavelength.toString()).toEqual("1");
     expect(wavelength.toFloat()).toEqual(1.000);
+  });
+
+  test('toThreeQuartersWavelength should default to meters as 0.7500', () => {
+    wavelength.setPrecision(4);
+    expect(wavelength.toThreeQuartersWavelength()).toEqual(0.7500);
   });
 
   test('should show three quarters wavelength in meters as 0.7500', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toThreeQuartersWavelength('m')).toEqual("0.7500");
-    expect(parseFloat(wavelength.toThreeQuartersWavelength('m'))).toEqual(0.7500);
+    expect(wavelength.toThreeQuartersWavelength('m')).toEqual(0.7500);
+  });
+
+  test('toFiveEighthsWavelength should default to meters as 0.6250', () => {
+    wavelength.setPrecision(4);
+    expect(wavelength.toFiveEighthsWavelength()).toEqual(0.6250);
   });
 
   test('should show five eighths half wavelength in meters as 0.6250', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toFiveEighthsWavelength('m')).toEqual("0.6250");
-    expect(parseFloat(wavelength.toFiveEighthsWavelength('m'))).toEqual(0.6250);
+    expect(wavelength.toFiveEighthsWavelength('m')).toEqual(0.6250);
+  });
+
+  test('toHalfWavelength should default to meters as 0.5000', () => {
+    wavelength.setPrecision(4);
+    expect(wavelength.toHalfWavelength()).toEqual(0.5000);
   });
 
   test('should show one half wavelength in meters as 0.5000', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toHalfWavelength('m')).toEqual("0.5000");
-    expect(parseFloat(wavelength.toHalfWavelength('m'))).toEqual(0.5000);
+    expect(wavelength.toHalfWavelength('m')).toEqual(0.5000);
+  });
+
+  test('toQuarterWavelength should default to meters as 0.2500', () => {
+    wavelength.setPrecision(4);
+    expect(wavelength.toQuarterWavelength()).toEqual(0.2500);
   });
 
   test('should show one quarter wavelength in meters as 0.2500', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toQuarterWavelength('m')).toEqual("0.2500");
-    expect(parseFloat(wavelength.toQuarterWavelength('m'))).toEqual(0.2500);
+    expect(wavelength.toQuarterWavelength('m')).toEqual(0.2500);
   });
 
   // centimeters tests
   test('should show full wavelength in centimeters as 100.0', () => {
-    expect(wavelength.toCentimeters()).toEqual("100.0");
-    expect(parseFloat(wavelength.toCentimeters())).toEqual(100);
+    expect(wavelength.toCentimeters()).toEqual(100.0);
   });
 
   test('should show three quarters wavelength in centimeters as 75.00', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toThreeQuartersWavelength('cm')).toEqual("75.00");
-    expect(parseFloat(wavelength.toThreeQuartersWavelength('cm'))).toEqual(75.00);
+    expect(wavelength.toThreeQuartersWavelength('cm')).toEqual(75.00);
   });
 
   test('should show five eighths half wavelength in centimeters as 62.50', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toFiveEighthsWavelength('cm')).toEqual("62.50");
-    expect(parseFloat(wavelength.toFiveEighthsWavelength('cm'))).toEqual(62.50);
+    expect(wavelength.toFiveEighthsWavelength('cm')).toEqual(62.50);
   });
 
   test('should show one half wavelength in centimeters as 50.00', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toHalfWavelength('cm')).toEqual("50.00");
-    expect(parseFloat(wavelength.toHalfWavelength('cm'))).toEqual(50.00);
+    expect(wavelength.toHalfWavelength('cm')).toEqual(50.00);
   });
 
   test('should show one quarter wavelength in centimeters as 25.00', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toQuarterWavelength('cm')).toEqual("25.00");
-    expect(parseFloat(wavelength.toQuarterWavelength('cm'))).toEqual(25.00);
+    expect(wavelength.toQuarterWavelength('cm')).toEqual(25.00);
   });
 
   // feet tests
 
-  test('should show full wavelength in feet as 3.281', () => {
+  test('should show full wavelength in feet as 3.2808', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toFeet()).toEqual("3.281");
-    expect(parseFloat(wavelength.toFeet())).toEqual(3.281);
+    expect(wavelength.toFeet()).toEqual(3.2808);
   });
 
-  test('should show three quarters wavelength in feet as 2.4611', () => {
+  test('should show three quarters wavelength in feet as 2.4606', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toThreeQuartersWavelength('f')).toEqual("2.461");
-    expect(parseFloat(wavelength.toThreeQuartersWavelength('f'))).toEqual(2.461);
+    expect(wavelength.toThreeQuartersWavelength('f')).toEqual(2.4606);
   });
 
-  test('should show five eighths half wavelength in feet as 2.051', () => {
+  test('should show five eighths half wavelength in feet as 2.0505', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toFiveEighthsWavelength('f')).toEqual("2.051");
-    expect(parseFloat(wavelength.toFiveEighthsWavelength('f'))).toEqual(2.051);
+    expect(wavelength.toFiveEighthsWavelength('f')).toEqual(2.0505);
   });
 
-  test('should show one half wavelength in feet as 1.640', () => {
+  test('should show one half wavelength in feet as 1.6404', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toHalfWavelength('f')).toEqual("1.640");
-    expect(parseFloat(wavelength.toHalfWavelength('f'))).toEqual(1.640);
+    expect(wavelength.toHalfWavelength('f')).toEqual(1.6404);
   });
 
   test('should show one quarter wavelength in feet as 0.8202', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toQuarterWavelength('f')).toEqual("0.8202");
-    expect(parseFloat(wavelength.toQuarterWavelength('f'))).toEqual(0.8202);
+    expect(wavelength.toQuarterWavelength('f')).toEqual(0.8202);
   });
 
 
   // inches tests
 
-  test('should show full wavelength in inches as 39.37', () => {
+  test('should show full wavelength in inches as 39.3701', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toInches()).toEqual("39.37");
-    expect(parseFloat(wavelength.toInches())).toEqual(39.37);
+    expect(wavelength.toInches()).toEqual(39.3701);
   });
 
-  test('should show three quarters wavelength in feet as 29.53', () => {
+  test('should show three quarters wavelength in inches as 29.5276', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toThreeQuartersWavelength('in')).toEqual("29.53");
-    expect(parseFloat(wavelength.toThreeQuartersWavelength('in'))).toEqual(29.53);
+    expect(wavelength.toThreeQuartersWavelength('in')).toEqual(29.5276);
   });
 
-  test('should show five eighths half wavelength in feet as 24.61', () => {
+  test('should show five eighths half wavelength in inches as 24.6063', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toFiveEighthsWavelength('in')).toEqual("24.61");
-    expect(parseFloat(wavelength.toFiveEighthsWavelength('in'))).toEqual(24.61);
+    expect(wavelength.toFiveEighthsWavelength('in')).toEqual(24.6063);
   });
 
-  test('should show one half wavelength in feet as 19.69', () => {
+  test('should show one half wavelength in inches as 19.685', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toHalfWavelength('in')).toEqual("19.69");
-    expect(parseFloat(wavelength.toHalfWavelength('in'))).toEqual(19.69);
+    expect(wavelength.toHalfWavelength('in')).toEqual(19.685);
   });
+
 
   test('should show one quarter wavelength in feet as 9.843', () => {
     wavelength.setPrecision(4);
-    expect(wavelength.toQuarterWavelength('in')).toEqual("9.843");
-    expect(parseFloat(wavelength.toQuarterWavelength('in'))).toEqual(9.843);
+    expect(wavelength.toQuarterWavelength('in')).toEqual(9.8425);
   });
 
 
