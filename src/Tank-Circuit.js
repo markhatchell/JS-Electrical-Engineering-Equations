@@ -1,29 +1,54 @@
 'use strict';
 
+/**
+ * TankCircuit is a class with methods that can be used without initializing.
+ *
+ * Its methods provide calculations for a Tank Circuit (LC), (Inductor and Capacitor) resonant circuit.
+ *
+ * @example
+ * const inductance  = 50 / 1000000000;
+ * const capacitance = 50 / 1000000000000;
+ * const frequency = TankCircuit.calcFrequency(inductance, capacitance);
+ *
+ * const frequency  = 100658424.20897408;
+ * const capacitance = 50 / 1000000000000;
+ * const inductance = TankCircuit.calcInductance(frequency, capacitance);
+ *
+ * const frequency  = 100658424.20897408;
+ * const inductance  = 50 / 1000000000;
+ * const capacitance = TankCircuit.calcCapacitance(frequency, inductance);
+ *
+ */
 class TankCircuit {
 
+  /**
+   *
+   * @param {number} inductance
+   * @param {number} capacitance
+   * @returns {number}
+   */
   static calcFrequency(inductance, capacitance) {
-    const calculatedFrequencyInHertz = 1 / (2 * Math.PI * Math.sqrt(inductance * capacitance));
-    return {
-      calculatedFrequencyInHertz: calculatedFrequencyInHertz
-    };
+    return 1 / (2 * Math.PI * Math.sqrt(inductance * capacitance));
   }
 
-
+  /**
+   *
+   * @param {number} frequency
+   * @param {number} capacitance
+   * @returns {number}
+   */
   static calcInductance(frequency, capacitance) {
-    const calculatedInductanceInHenries = 1 / ( 4 * Math.PI * Math.PI * ( frequency * frequency * capacitance));
-
-    return {
-      calculatedInductanceInHenries: calculatedInductanceInHenries
-    };
+    return 1 / ( 4 * Math.PI * Math.PI * ( frequency * frequency * capacitance));
   }
 
+  /**
+   *
+   * @param {number} frequency
+   * @param {number} inductance
+   * @returns {number}
+   */
   static calcCapacitance(frequency, inductance) {
-    const calculatedCapacitanceInFarads = 1 / ( 4 * Math.PI * Math.PI * ( frequency * frequency * inductance));
-
-    return {
-      calculatedCapacitanceInFarads: calculatedCapacitanceInFarads
-    };
+    return 1 / ( 4 * Math.PI * Math.PI * ( frequency * frequency * inductance));
   }
 
 

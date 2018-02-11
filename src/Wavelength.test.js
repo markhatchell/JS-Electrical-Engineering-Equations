@@ -2,12 +2,18 @@ const Wavelength = require('./Wavelength').default;
 
 
 describe('Wavelength', () => {
-  let wavelength = new Wavelength('300');
+  let wavelength = new Wavelength(300);
 
-  test('should throw error when initialized with out a frequency', () => {
+  test('should throw error when initialized without a frequency', () => {
     expect(() => {
       new Wavelength()
     }).toThrowError('Need a frequency to init a Wavelength');
+  });
+
+  test('should throw error when initialized with a string as frequency', () => {
+    expect(() => {
+      new Wavelength('300')
+    }).toThrowError('Frequency should be a number');
   });
 
 
