@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --coverage",
     "build": "babel src --out-dir lib --ignore *.test.js",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "build-docs": "esdoc"
   },
   "jest": {
     "testEnvironment": "node"
@@ -29,6 +30,10 @@
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-es2015-block-scoping": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "esdoc": "^1.0.4",
+    "esdoc-standard-plugin": "^1.0.0",
     "jest-cli": "^22.1.4"
+  },
+  "dependencies": {
   }
 }
