@@ -1,6 +1,8 @@
 'use strict';
 
 import { getFloat } from "./utils";
+import BatteryStorage from "./objects/BatteryStorage";
+import BatteryRuntime from "./objects/BatteryRuntime";
 
 /*
 * Facts
@@ -15,50 +17,91 @@ import { getFloat } from "./utils";
 /**
  * Represents a Battery.
  *
- * either set the aH or coulombs of the battery for capacity
+ * Either set the aH or coulombs of the battery for capacity before calculating runtime.
+ * @example
+ * let battery = Battery();
+ * battery.setBatteryCapacityInAmpHours(1);
+ * battery.setCurrentDraw(1);
+ * battery.calculateRuntime();
+ * const runtimeInMin = battery.getRunTimeInMin();
+ *
  */
 class Battery {
 
+  /**
+   * Takes no parameters, and initializes a fresh battery object.
+   */
   constructor() {
-    this.battery = {
-      "coulombs": 0,
-      "ampHours": 0
-    };
 
-    this.runtime = {
-      totalMin: 0,
-      totalHours: 0,
-      totalSeconds: 0
-    };
+    /**
+     * @type {BatteryStorage}
+     */
+    this.battery = new BatteryStorage();
 
+    /**
+    * @type {BatteryRuntime}
+    */
+    this.runtime = new BatteryRuntime();
+
+    /**
+     * @type {number}
+     */
     this.efficiency = .8;
+
+    /**
+     * @type {number}
+     */
     this.precision = 4;
+
+    /**
+     * @type {number}
+     */
     this.currentDraw = 0;
   }
 
+  /**
+   * @param {number} amps - The current draw in amps.
+   */
   setCurrentDraw(amps) {
     this.currentDraw = amps;
   }
 
+  /**
+   * @param {number} ampHours - The battery capacity in amp hours.
+   * @return {undefined}
+   */
   setBatteryCapacityInAmpHours(ampHours) {
     this.battery.ampHours = ampHours;
     this.battery.coulombs = ampHours * 3600;
 
   }
 
+  /**
+   * @return {number}
+   */
   getBatteryCapacityInAmpHours() {
     return getFloat(this.battery.ampHours, this.precision);
   }
 
+  /**
+   * @param {number} coulombs - The battery capacity in coulombs.
+   * @return {undefined}
+   */
   setBatteryCapacityInCoulombs(coulombs) {
     this.battery.coulombs = coulombs;
     this.battery.ampHours = coulombs / 3600;
   }
 
+  /**
+   * @return {number}
+   */
   getBatteryCapacityInCoulombs() {
     return getFloat(this.battery.coulombs, this.precision);
   }
 
+  /**
+   * @return {BatteryRuntime}
+   */
   calculateRuntime() {
     this.runtime.totalHours = this.battery.ampHours / (this.currentDraw / this.efficiency);
     this.runtime.totalMin = this.runtime.totalHours * 60;
@@ -66,18 +109,31 @@ class Battery {
     return this.getRunTime();
   }
 
+  /**
+   * @return {BatteryRuntime}
+   */
   getRunTime() {
     return this.runtime;
   }
 
+  /**
+   * @return {number}
+   */
   getRunTimeInMin() {
     return getFloat(this.runtime.totalMin, this.precision);
   }
 
+  /**
+   * @return {number}
+   */
   getRunTimeInHours() {
     return getFloat(this.runtime.totalHours, this.precision);
   }
 
+  /**
+   * @param {number} integer - The floating precision.
+   * @return {undefined}
+   */
   setPrecision(integer = 4) {
     this.precision = integer;
   }
