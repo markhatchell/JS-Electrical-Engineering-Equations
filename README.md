@@ -11,6 +11,8 @@ This is an ES6/ES2015 library of Electrical Engineering Equations
 `npm install js-electrical-engineering-equations`
 
 
-# Useage
+# Docs
 
-Useage instructions will be coming soon.
+Documentation level is now at 100%.
+
+To view the documentation visit [http://marks-design.com/docs/JS-Electrical-Engineering-Equations/v2.0.0/](http://marks-design.com/docs/JS-Electrical-Engineering-Equations/v2.0.0/)
