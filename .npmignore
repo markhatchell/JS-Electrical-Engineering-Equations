@@ -7,3 +7,4 @@
 .gitignore
 circle.yml
 .npmignore
+npm-debug.log
