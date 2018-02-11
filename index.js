@@ -1,7 +1,7 @@
-import Wavelength from './src/Wavelength';
-import OhmsLaw from './src/Ohms-Law';
-import TankCircuit from './src/Tank-Circuit';
-import Battery from './src/Battery';
+import Wavelength from './lib/Wavelength';
+import OhmsLaw from './lib/Ohms-Law';
+import TankCircuit from './lib/Tank-Circuit';
+import Battery from './lib/Battery';
 
 
 module.exports = {
