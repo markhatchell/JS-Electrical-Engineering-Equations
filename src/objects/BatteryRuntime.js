@@ -9,6 +9,7 @@ class BatteryRuntime {
    * @param {number} totalMin
    * @param {number} totalHours
    * @param {number} totalSeconds
+   * @return {BatteryRuntime}
    */
 
   constructor(totalMin = 0, totalHours = 0, totalSeconds = 0) {

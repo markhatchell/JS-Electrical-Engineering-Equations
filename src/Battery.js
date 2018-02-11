@@ -30,6 +30,7 @@ class Battery {
 
   /**
    * Takes no parameters, and initializes a fresh battery object.
+   * @return {Battery}
    */
   constructor() {
 

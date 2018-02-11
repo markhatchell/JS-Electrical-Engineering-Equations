@@ -8,6 +8,8 @@ class BatteryStorage {
    *
    * @param {number} coulombs
    * @param {number} ampHours
+   * @return {BatteryStorage}
+   *
    */
 
   constructor(coulombs = 0, ampHours = 0) {

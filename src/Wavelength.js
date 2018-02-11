@@ -19,6 +19,8 @@ class Wavelength {
    *
    * @param {number} frequencyInMegahertz - The given frequency for the wavelength.
    * @param {number} [precision = 4] - The float precision for returned values.
+   * @returns {Wavelength}
+   *
    */
   constructor(frequencyInMegahertz, precision = 4) {
     if (typeof frequencyInMegahertz === 'undefined') {
