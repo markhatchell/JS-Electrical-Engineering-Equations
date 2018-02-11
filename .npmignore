@@ -2,3 +2,8 @@
 *.test.js
 /coverage
 /docs
+.babelrc
+.esdoc.json
+.gitignore
+circle.yml
+.npmignore
