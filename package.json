@@ -7,6 +7,7 @@
     "test": "jest --coverage",
     "build": "babel src --out-dir lib --ignore *.test.js",
     "prepublish": "npm run build",
+    "build-types": "dtsmake -s './src/Battery.js,./src/Ohms-Law.js,./src/Tank-Circuit.js,./src/util-functions.js,./src/Wavelength.js,./src/objects/BatteryRuntime.js,./src/objects/BatteryStorage.js' --dist ./index -e -A -n 'js-electrical-engineering-equations'",
     "build-docs": "esdoc"
   },
   "jest": {
@@ -31,6 +32,7 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-es2015-block-scoping": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "dtsmake": "0.0.10",
     "esdoc": "^1.0.4",
     "esdoc-standard-plugin": "^1.0.0",
     "jest-cli": "^22.1.4"
