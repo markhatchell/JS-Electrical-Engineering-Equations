@@ -4,7 +4,7 @@
 [![CircleCI](https://circleci.com/gh/markhatchell/JS-Electrical-Engineering-Equations.svg?style=svg)](https://circleci.com/gh/markhatchell/JS-Electrical-Engineering-Equations)
 
 
-This is an ES6/ES2015 library of Electrical Engineering Equations
+This is an ES6/ES2015 library of Electrical Engineering Equations. It works with Typescript, es6, and es5.
 
 # Installation
 

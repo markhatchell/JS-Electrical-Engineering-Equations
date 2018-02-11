@@ -1,3 +1,8 @@
+# Version (2.0.6)
+
+ - added type definition file for typescript usage of the library.
+
+
 # Version (2.0.0) (Breaking Changes)
 
  - fixed typo with tank circuit calculation objects, Henrys was spelled as Henries.

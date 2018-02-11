@@ -1,7 +1,7 @@
 {
   "name": "js-electrical-engineering-equations",
-  "version": "2.0.5",
-  "description": "This is an ES6/ES2015 library of Electrical Engineering Equations",
+  "version": "2.0.6",
+  "description": "This is an ES6/ES2015 library of Electrical Engineering Equations. It works with Typescript, es6, and es5.",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest --coverage",
