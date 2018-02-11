@@ -1,4 +1,4 @@
-const OhmsLaw = require('./Ohms-Law').default;
+const OhmsLaw = require('./Ohms-Law');
 
 
 describe('OhmsLaw', () => {

@@ -1,4 +1,4 @@
-const Wavelength = require('./Wavelength').default;
+const Wavelength = require('./Wavelength');
 
 
 describe('Wavelength', () => {

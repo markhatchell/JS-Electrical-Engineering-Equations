@@ -1,6 +1,6 @@
 {
   "name": "js-electrical-engineering-equations",
-  "version": "2.0.0",
+  "version": "2.0.5",
   "description": "This is an ES6/ES2015 library of Electrical Engineering Equations",
   "main": "lib/index.js",
   "scripts": {
@@ -28,12 +28,12 @@
   "homepage": "https://github.com/markhatchell/JS-Electrical-Engineering-Equations#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-es2015-block-scoping": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "esdoc": "^1.0.4",
     "esdoc-standard-plugin": "^1.0.0",
     "jest-cli": "^22.1.4"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

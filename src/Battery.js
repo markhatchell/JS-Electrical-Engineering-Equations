@@ -1,6 +1,6 @@
 'use strict';
 
-import { getFloat } from "./utils";
+import { getFloat } from "./util-functions";
 import BatteryStorage from "./objects/BatteryStorage";
 import BatteryRuntime from "./objects/BatteryRuntime";
 

@@ -1,4 +1,4 @@
-const TankCircuit = require('./Tank-Circuit').default;
+const TankCircuit = require('./Tank-Circuit');
 
 
 describe('TankCircuit', () => {

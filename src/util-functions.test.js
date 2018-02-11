@@ -1,4 +1,4 @@
-import { getFloat, meterConversion, metersToCentimeters, metersToFeet, metersToInches } from "./utils";
+import { getFloat, meterConversion, metersToCentimeters, metersToFeet, metersToInches } from "./util-functions";
 
 describe('utils', () => {
 
