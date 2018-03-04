@@ -5,23 +5,13 @@
  * ResistorDivider is a class with methods that can be used without initializing.
  *
  * It provides the various methods for determining one of the four variables for each calculation.
- * if (calcVolts)
- {
-     volts = voltsout*(ohms1+ohms2)/ohms2;
- }
- else if (calcOhms1)
- {
-     ohms1 = volts*ohms2/voltsout-ohms2;
- }
- else if (calcOhms2)
- {
-     ohms2 = voltsout*ohms1/(volts-voltsout);
- }
- else if (calcVoltsout)
- {
-     voltsout = volts*ohms2/(ohms1+ohms2);
- }
+ *
  * @example
+ *
+ * cont { outputVoltage } = ResistorDivider.calcOutputVoltage(10, 1000, 1000);
+ * cont { resistor1 } = ResistorDivider.calcResistor1(10, 5, 1000);
+ * cont { resistor2 } = ResistorDivider.calcResistor2(10, 5, 1000);
+ * cont { inputVoltage } = ResistorDivider.calcInputVoltage(5, 1000, 1000);
  *
  */
 class ResistorDivider {
@@ -42,6 +32,15 @@ class ResistorDivider {
     };
   }
 
+  /**
+   *
+   * equation is resistor2 = (outputVoltage * resistor1) / (inputVoltage - outputVoltage)
+   *
+   * @param {number} inputVoltage
+   * @param {number} outputVoltage
+   * @param {number} resistor1
+   * @returns {{resistor2: number}}
+   */
   static calcResistor2(inputVoltage, outputVoltage, resistor1) {
     const resistor2 = (outputVoltage * resistor1) / (inputVoltage - outputVoltage);
     return {
@@ -49,6 +48,15 @@ class ResistorDivider {
     };
   }
 
+  /**
+   *
+   * equation is resistor1 = ((inputVoltage * resistor2) / outputVoltage) - resistor2
+   *
+   * @param {number} inputVoltage
+   * @param {number} outputVoltage
+   * @param {number} resistor2
+   * @returns {{resistor1: number}}
+   */
   static calcResistor1(inputVoltage, outputVoltage, resistor2) {
     const resistor1 = ((inputVoltage * resistor2) / outputVoltage) - resistor2;
     return {
@@ -56,6 +64,15 @@ class ResistorDivider {
     };
   }
 
+  /**
+   *
+   * equation is inputVoltage = ((outputVoltage * (resistor1 + resistor2)) / resistor2)
+   *
+   * @param {number} outputVoltage
+   * @param {number} resistor1
+   * @param {number} resistor2
+   * @returns {{inputVoltage: number}}
+   */
   static calcInputVoltage(outputVoltage, resistor1, resistor2) {
     const inputVoltage = ((outputVoltage * (resistor1 + resistor2)) / resistor2);
     return {
@@ -65,6 +82,4 @@ class ResistorDivider {
 
 }
 
-
 export default ResistorDivider;
-
